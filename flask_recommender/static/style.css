@@ -1,0 +1,98 @@
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.center_top{
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);    
+}
+h1 {
+  position: relative;
+  top: 15%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: monaco, Consolas, Lucida Console, monospace;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 26.4px;
+  color:rgb(133, 6, 80);
+  letter-spacing: 0.1ch;
+
+}
+
+.button {
+  display: inline-block;
+  background-color: #b798e2;
+  -webkit-border-radius: 60px;
+  border-radius: 60px;
+  border: none;
+  color: #740d7e;
+  text-align:center;
+  font-style: normal;
+  font-size: 15px;
+  font-family: monospace;
+  padding: 20px;
+  width: 400px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-decoration: none;
+  top: 50%;
+}
+
+@keyframes glowing {
+    0% {
+      background-color: #b82fa1;
+      box-shadow: 0 0 5px #f12d8f;
+    }
+    50% {
+      background-color: #ff07ff;
+      box-shadow: 0 0 20px #8419e8;
+    }
+    100% {
+      background-color: #e6246e;
+      box-shadow: 0 0 5px #f867db;
+    }
+}
+.button {
+    animation: glowing 2000ms infinite;
+}
+
+.button_back {
+    display: inline-block;
+    background-color: #b798e2;
+    border-radius: 5px;
+    border: 4px double #cccccc;
+    color: #740d7e;
+    text-align: center;
+    font-size: 20px;
+    font-family: monospace;
+    padding: 20px;
+    width: 150px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    top: 70%;
+  }
+
+.h1_big {
+
+    color:rgb(120, 52, 245);
+    font-size:300%;
+    font-family: monospace;
+  }
+
