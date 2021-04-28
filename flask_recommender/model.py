@@ -1,23 +1,23 @@
+'''script connects to postgres database and contains functions to convert data to dfs, 
+   create list/dict of movietitles and id's, load, fit and dump model'''
+
 from sqlalchemy import create_engine
 from sklearn.decomposition import NMF
-
 import pandas as pd
-import numpy as np
-import os 
-
+import numpy as np 
 from joblib import dump, load
+import os
 
-
+# connection to database
 HOST = 'localhost'
 PORT = '5432'
 DB = 'movieLens'
 
 conn_string = f'postgres://{HOST}:{PORT}/{DB}' 
-
 engine = create_engine(conn_string)
 
+# create model and hyperparameters
 MODEL = NMF(n_components=20, init='random', random_state=10, max_iter=10000)
-
 
 def table_to_df():
     """queries tables ratings and movies from postgres database, sets index in ratings to user id  and drops timestamp
@@ -67,10 +67,7 @@ def load_model():
     MODEL_fitted = load('./NMF.joblib')
     return MODEL_fitted
 
-
 if __name__ == '__main__' :
-
-
     ...
     
 

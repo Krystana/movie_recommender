@@ -1,19 +1,20 @@
-import os
+'''main script to run flask application of movie recommender. 
+Creates movie recommendation out of user input of 3 movies and its ratings from 1-5.'''
 
 from flask import Flask, render_template, make_response, jsonify, request
 from recommender import user_movie_index, to_array, get_prediction, format_dict
 from model import load_model, get_movie_names_dict, get_movie_names_list, table_to_df, get_mean, get_sparse, to_sparse_fillna, model_fit, dump_model
+import os
 
+# initiate Flask
 app = Flask(__name__)
 
 @app.route('/recommender') 
 def recommender():
-
     # get tables from db:
     ratings, movies = table_to_df()
     # ratings table to correct format: 
     ratings = get_sparse(ratings)
-
 
     # check if model is loaded, if not fit on process df ratings and fit model on it: 
     if 'NMF.joblib' in os.listdir('.'):

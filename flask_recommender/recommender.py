@@ -1,7 +1,8 @@
+'''script contains functions to handle user input data and predict recommendation with user matrix'''
+
 import pandas as pd
 import numpy as np
 import random
-from joblib import load
 from joblib import load, dump
 #! pip install fuzzywuzzy
 from fuzzywuzzy import fuzz
@@ -67,10 +68,7 @@ def get_prediction(user_array, trained_model, movie_names_list):
     print(str(best_rating) + '******' + str(movie) )
     return movie[1]
     
+if __name__ == '__main__': 
+    ...
 
-
-#if __name__ == '__main__': 
-
-    #movie = get_prediction(user_array, trained_model, movie_names_list)
-    #print(movie)
 
